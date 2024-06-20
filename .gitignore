@@ -21,3 +21,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# Ignorar archivos generados por Python
+*.pyc
+
+# Ignorar el directorio venv (si aplica)
+venv/

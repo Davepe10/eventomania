@@ -1,12 +1,13 @@
 import React from "react";
 import "./estilos.css";
+import logo from "./imagenes/logo/logo principal.png";
 
  function Menu() {
     return (
       <div className="menu">
         <header className="menu-contenedor">
           <div className="logo">
-            <img src="/" alt="eventomania" className="logo-eventomania" />
+            <img src={logo} alt="eventomania" className="logo-eventomania" />
             <input
               type="text"
               placeholder="Encuentra eventos, lugares, organizadores, etc..."
