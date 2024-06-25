@@ -1,88 +1,104 @@
-import React from "react";
+import React ,{useState}from "react";
 import "./estilos.css";
-import logo from "./imagenes/logo/logo principal.png";
-import { MdOutlinePriceChange, MdDateRange } from 'react-icons/md';
-import { BsGeoAlt } from 'react-icons/bs';
-import { BiSolidCategoryAlt ,BiSearch } from 'react-icons/bi';
+import MenuBar from "./Componentes/MenuBar.js";
+import  BannerPrincipal from "./Componentes/BannerPrincipal.js";
+
+
 
 
 
 function Menu() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const handleSlideChange = (index) => {
+    setCurrentSlide(index);
+  };
+
+   const banner = [
+    { titulo: 'Conciertazo!', descripcion: 'Concierto gratis, solo programadores', fecha: '07/07/24 - Centro de Lima' },
+    { titulo: 'Charla Networking', descripcion: 'Conferencia sobre networking', fecha: '15/07/24 - Online' },
+    { titulo: 'Rock and Roll Night', descripcion: 'Festival de música rock', fecha: '21/07/24 - Estadio Nacional' },
+    { titulo: 'Club de Carros', descripcion: 'Exposición de autos clásicos', fecha: '30/07/24 - Plaza Mayor' }
+  ];
+
+
   return (
     <div className="menu">
-   <header className="menu-contenedor">
-        <div className="header-contenido">
-          <div className="logo">
-            <img src={logo} alt="eventomania" className="logo-eventomania" />
-            <div className="inputBox_container">
-              <BiSearch className="search_icon" />
-              <input
-                type="text"
-                placeholder="Encuentra eventos, lugares, organizadores, etc..."
-                className="inputBox"
-              />
+      <div> 
+        <MenuBar/>
+      </div>
+    
+      <main className="contenido">
+      <div className="contenedor-banner">
+            <div className="superpuesto-banner">
+              <h2 className="titulo-banner">{banner[currentSlide].titulo}</h2>
+              <p className="descripcion-banner">{banner[currentSlide].descripcion}</p>
+              <p className="fecha-banner">{banner[currentSlide].fecha}</p>
+              <button className="boton-vermas">Ver Más</button>
+            </div>
+            <div className="imagen-banner">
+              <BannerPrincipal onSlideChange={handleSlideChange} />
             </div>
           </div>
-          <div className="iconos">
-            <MdOutlinePriceChange className="icon" />
-            <BsGeoAlt className="icon" />
-            <BiSolidCategoryAlt className="icon" />
-            <MdDateRange className="icon" />
-            <button className="iniciar">Iniciar sesión</button>
-            <button className="registrarse">Registrarse</button>
-          </div>
-        </div>
-      </header>
 
-      <main className="banner">
-        <div className="banner-contenedor">
-          <div className="flex items-center justify-between px-8 py-4">
-            <div className="text-4xl font-bold">
-              NOEMI <br /> CASQUET
+        <h2 className="titulo-eventos">Eventos destacados</h2>
+        <div className="grid-eventos">
+          {/* Ejemplo de un evento destacado */}
+          <div className="evento">
+            <img
+              src="/placeholder.svg"
+              alt="Momentos"
+              className="imagen-evento"
+            />
+            <div className="contenido-evento">
+              <h3 className="titulo-evento">MOMENTOS</h3>
+              <p className="fecha-evento">DEL 31 AL 30.06</p>
+              <p className="lugar-evento">EL GRAN TEATRO LA VOZ HUMANA</p>
+              <div className="flex justify-between items-center mt-4">
+              <span className="text-lg font-bold text-green-600">Desde S/ 567.00</span>
+              <button className="bg-green-600 text-white px-4 py-2 rounded">Comprar</button>
             </div>
-            <div className="text-4xl font-bold">
-              ORIGEN <br /> EL DESTINO DE TU SEXUALIDAD <br /> LIMA <br /> 17 DE JUNIO
+            </div>
+          </div>
+
+          <div className="evento">
+            <img
+              src="/placeholder.svg"
+              alt="Momentos"
+              className="imagen-evento"
+            />
+            <div className="contenido-evento">
+              <h3 className="titulo-evento">MOMENTOS</h3>
+              <p className="fecha-evento">DEL 31 AL 30.06</p>
+              <p className="lugar-evento">EL GRAN TEATRO LA VOZ HUMANA</p>
+              <div className="flex justify-between items-center mt-4">
+              <span className="text-lg font-bold text-green-600">Desde S/ 567.00</span>
+              <button className="bg-green-600 text-white px-4 py-2 rounded">Comprar</button>
+            </div>
+            </div>
+          </div>
+
+
+          <div className="evento">
+            <img
+              src="/placeholder.svg"
+              alt="Momentos"
+              className="imagen-evento"
+            />
+            <div className="contenido-evento">
+              <h3 className="titulo-evento">MOMENTOS</h3>
+              <p className="fecha-evento">DEL 31 AL 30.06</p>
+              <p className="lugar-evento">EL GRAN TEATRO LA VOZ HUMANA</p>
+              <div className="flex justify-between items-center mt-4">
+              <span className="text-lg font-bold text-green-600">Desde S/ 567.00</span>
+              <button className="bg-green-600 text-white px-4 py-2 rounded">Comprar</button>
+            </div>
             </div>
           </div>
         </div>
-        <h2 className="text-2xl font-bold mt-8 mb-4">Eventos destacados</h2>
-        <div className="grid grid-cols-4 gap-4">
-          <div className="bg-teal-500 rounded-lg overflow-hidden">
-            <img src="/placeholder.svg" alt="Momentos" className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="text-xl font-bold">MOMENTOS</h3>
-              <p>DEL 31 AL 30.06</p>
-              <p>EL GRAN TEATRO LA VOZ HUMANA</p>
-            </div>
-          </div>
-          <div className="bg-purple-500 rounded-lg overflow-hidden">
-            <img src="/placeholder.svg" alt="Selena Tribute" className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="text-xl font-bold">CONCIERTO TRIBUTO</h3>
-              <p>SELENA</p>
-              <p>HORA 8:30 P.M.</p>
-              <p>Selina Lima</p>
-            </div>
-          </div>
-          <div className="bg-green-500 rounded-lg overflow-hidden">
-            <img src="/placeholder.svg" alt="Peru Fan Fest" className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="text-xl font-bold">PERU FAN FEST 2024</h3>
-              <p>JUEGOS SONIDOS NERD</p>
-              <p>PERU VS CHILE</p>
-            </div>
-          </div>
-          <div className="bg-black rounded-lg overflow-hidden">
-            <div className="p-4">
-              <h3 className="text-xl font-bold text-white">CREA Y VENDE TU EVENTO</h3>
-              <ul className="list-disc pl-4 text-white">
-                <li>+ 6M LLONES DE ENTRADAS VENDIDAS</li>
-                <li>+ 60 MIL EVENTOS</li>
-                <li>+ 8 MIL ORGANIZADORES DE EVENTOS</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+
+
+        
       </main>
 
       
@@ -174,7 +190,7 @@ function Menu() {
           <div className="p-4">
             <h3 className="text-lg font-semibold">FIESTA BLANCA – AÑO NUEVO 2024</h3>
           </div>
-        </div>
+        </div>  
       </div>
     </div>
   )

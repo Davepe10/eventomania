@@ -1,0 +1,11 @@
+BIBLIOTECAS USADAS
+
+npm install react-slick slick-carousel
+
+npm install --save @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
+
+
+
+import { MdOutlinePriceChange, MdDateRange } from 'react-icons/md';
+import { BsGeoAlt } from 'react-icons/bs';
+import { BiSolidCategoryAlt ,BiSearch } from 'react-icons/bi';

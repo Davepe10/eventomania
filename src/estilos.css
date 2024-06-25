@@ -17,7 +17,7 @@ body {
 .menu-contenedor {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 5px 20px;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -106,17 +106,48 @@ body {
 
 /*FIN DEL HEADER*/
 
+/* estilos.css */
 
+.banner-slider {
+  width: 100%;
+  max-height: 400px; /* Ajusta la altura máxima según sea necesario */
+  overflow: hidden;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.banner-img {
+  width: 100%;
+  height: 50%;
+}
+
+.img-banner {
+  width: 100%;
+  height: auto; /* Ajusta automáticamente la altura según el ancho */
+  max-height: 400px; /* Limita la altura máxima para evitar que las imágenes sean demasiado grandes */
+  object-fit: cover; /* Ajusta la imagen para llenar el contenedor */
+}
+
+/* estilos.css */
 
 .banner {
-  background-color: #f3f4f6;
-  padding: 2rem;
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
-.banner-contenedor {
-  max-width: 1200px;
-  margin: 0 auto;
+.banner img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
+
+
+/* FIN DE BANNER*/
+
+
 
 .grid {
   display: grid;
@@ -164,4 +195,84 @@ body {
   .grid {
     grid-template-columns: 1fr;
   }
+}
+
+
+
+
+/*********Para el texto que va sobre el banner***************/
+
+/* Estilos para el contenedor del banner y su contenido */
+.contenedor-banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Estilos para el contenido superpuesto */
+.superpuesto-banner {
+  position: absolute;
+  top: 30px; /* Ajusta la posición verticalmente */
+  left: 20px; /* Ajusta la posición horizontalmente */
+  padding: 20px;
+  color: rgb(255, 255, 255);
+  z-index: 1; /* Asegura que el contenido esté sobre la imagen */
+  border-radius: 8px;
+}
+
+/* Estilos para el botón dentro del contenido superpuesto */
+.superpuesto-banner .boton-vermas {
+  font-size: 20px;
+  color: rgb(255, 255, 255); /* Color del texto */
+  background-color: transparent; /* Fondo transparente */
+  border: 3px solid white; /* Borde sólido blanco */
+  padding: 10px 20px; /* Espaciado interno */
+  cursor: pointer; /* Cambio de cursor al pasar el mouse */
+  border-radius: 6px; /* Bordes redondeados */
+}
+
+.superpuesto-banner .boton-vermas:hover {
+  background-color: white; /* Cambio de color de fondo al pasar el mouse */
+  color: black; /* Cambio de color de texto al pasar el mouse */
+}
+
+
+
+.descripcion-banner, .fecha-banner{
+  font-size: 14px;
+}
+
+
+/* Estilos para la imagen del banner */
+.imagen-banner {
+  width: 100%;
+}
+
+/* Estilos para los eventos destacados */
+.grid-eventos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Estilos para un evento destacado */
+.evento {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* Estilos para la imagen del evento */
+.imagen-evento {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Estilos para el contenido del evento */
+.contenido-evento {
+  padding: 15px;
+  background-color: #f0f0f0;
 }
