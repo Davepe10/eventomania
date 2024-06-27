@@ -5,9 +5,8 @@ import  BannerPrincipal from "./Componentes/BannerPrincipal.js";
 
 
 
-
-
 function Menu() {
+
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const handleSlideChange = (index) => {

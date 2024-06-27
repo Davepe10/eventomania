@@ -1,0 +1,139 @@
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 550px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-registro {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between; /* Espacio entre los inputs dentro del grupo */
+    margin-bottom: 15px;
+}
+.input-nombre,
+.input-apellido,
+.input-dni,
+.input-telefono,
+.input-email,
+.input-contraseña {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    margin: 7px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.input-email {
+    /* Estilos específicos para el input de email */
+    width: calc(50% - 5px); /* Calcula el ancho para dos inputs en la misma línea */
+    margin-right: 10px; /* Espacio entre inputs de email */
+}
+
+.input-contraseña {
+    /* Estilos específicos para el input de contraseña */
+   /* width: 46%; /* Ancho completo */
+    width: calc(50% - 18px);
+}
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.boton-registro {
+    width: 100%;
+    padding: 10px;
+    background-color: #00bfa5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.boton-registro:hover {
+    background-color: #009688;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #000; /* Cambia esto al color que prefieras */
+    font-size: 10px;
+}
+
+h1{
+    font-size: 15px;
+    color:#000
+}
+
+
+ /* Estilos para los selects */
+.select-pais,
+.select-ciudad,
+.select-genero {
+    width: 48%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Estilos para los checkboxes */
+.checkbox-terminos,
+.checkbox-privacidad {
+    margin-bottom: 10px; /* Espacio entre checkboxes */
+}
+
+/* Estilos para el botón de registro */
+.boton-registro {
+    width: 100%;
+    padding: 10px;
+    background-color: #00bfa5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px; /* Espacio arriba del botón */
+}
+
+.boton-registro:hover {
+    background-color: #009688;
+}
