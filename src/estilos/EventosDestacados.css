@@ -1,0 +1,85 @@
+.grid-eventos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 20px; /* Espacio en los lados de la página */
+}
+
+.evento {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    height: 100%; /* Altura del contenedor */
+}
+
+.evento:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.imagen-evento {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+    transition: transform 0.3s ease; /* Efecto de transformación al pasar el mouse */
+}
+
+.evento:hover .imagen-evento {
+    transform: scale(1.1); /* Zoom in al pasar el mouse */
+}
+
+.contenido-evento {
+    padding: 15px;
+    color: #000; /* Texto negro */
+}
+
+.titulo-evento {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.descripcion-evento {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+.fecha-evento {
+    background-color: #f3f4f6;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.info-precio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.precio-evento {
+    font-size: 1.2rem;
+}
+
+.boton-comprar {
+    background-color: #10b981;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-comprar:hover {
+    background-color: #0e8a6d;
+}
+
+.info-precio {
+    display: flex; /* Para usar flexbox */
+    justify-content: space-between; /* Separación horizontal */
+    align-items: center; /* Alineación vertical */
+}

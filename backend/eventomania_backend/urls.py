@@ -20,3 +20,12 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+
+# En urls.py de tu aplicación Django
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('api/eventos/', views.obtener_eventos, name='api-eventos'),
+    # Otras URLs de tu aplicación
+]
