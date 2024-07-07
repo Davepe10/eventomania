@@ -227,3 +227,27 @@ sesion*/
     font-size: 18px;
     margin-bottom: 1px;
   }
+
+
+
+
+
+  
+
+
+  /************************/
+
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  
+.close-btn {
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  color: #000000;
+}

@@ -1,28 +1,24 @@
+// Archivo: MenuUsuario.js
 import React, { useState } from 'react';
 import logo from "../imagenes/logo/logo principal.png";
 import { MdOutlinePriceChange, MdDateRange } from 'react-icons/md';
 import { BsGeoAlt } from 'react-icons/bs';
 import { BiSolidCategoryAlt, BiSearch } from 'react-icons/bi';
-import { Link } from 'react-router-dom'; // Importar Link desde react-router-dom
-import FormularioRegistro from '../Sesion';
-import FormularioSesion from '../Registro';
+import "../estilos/MenuUsuario.css";
+import { Link, useNavigate } from 'react-router-dom';
 
-const Menubar = () => {
-  const [modalVisible, setModalVisible] = useState(false);
-  const [isRegistro, setIsRegistro] = useState(true);
+const MenuUsuario = ({ handleLogout }) => {
+  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const abrirModalRegistro = () => {
-    setIsRegistro(true);
-    setModalVisible(true);
+  const handleProfileClick = () => {
+    setIsProfileMenuOpen(!isProfileMenuOpen);
   };
 
-  const abrirModalSesion = () => {
-    setIsRegistro(false);
-    setModalVisible(true);
-  };
-
-  const cerrarModal = () => {
-    setModalVisible(false);
+  const handleLogoutClick = () => {
+    handleLogout(); // Llama a la función handleLogout pasada como prop
+    alert('Ha cerrado sesión');
+    navigate('/PaginaPrincipal'); // Navega al usuario a la página principal después de cerrar sesión
   };
 
   return (
@@ -46,13 +42,20 @@ const Menubar = () => {
           <Link to="/ubicacion" className="icon-link"><BsGeoAlt className="icon" /></Link>
           <Link to="/categoria" className="icon-link"><BiSolidCategoryAlt className="icon" /></Link>
           <Link to="/fecha" className="icon-link"><MdDateRange className="icon" /></Link>
-          <button className="iniciar" onClick={abrirModalRegistro}>Iniciar sesión</button>
-          <button className="registrarse" onClick={abrirModalSesion}>Registrarse</button>
+          <div className="perfil-container">
+            <button className="perfil" onClick={handleProfileClick}>Perfil</button>
+            {isProfileMenuOpen && (
+              <div className="submenu">
+                <Link to="/perfil" className="submenu-item">Mi Perfil</Link>
+                <button className="submenu-item" onClick={handleLogoutClick}>Cerrar Sesión</button>
+              </div>
+            )}
+          </div>
+          <button className="crear-evento">Crear Evento</button>
         </div>
       </div>
-      {modalVisible && (isRegistro ? <FormularioRegistro closeModal={cerrarModal} /> : <FormularioSesion closeModal={cerrarModal} />)}
     </header>
   );
 };
 
-export default Menubar;
+export default MenuUsuario;

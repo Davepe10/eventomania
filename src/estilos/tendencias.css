@@ -1,0 +1,35 @@
+.tendencias {
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto; /* Center the carousel */
+  }
+  
+  .tendencia-item {
+    position: relative;
+    margin: 10px; /* Add margin to create space between images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .tendencia-imagen {
+    width: calc(100% - 20px); /* Adjust width to account for margin */
+    height: 200px; /* Puedes ajustar la altura según tu preferencia */
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px; /* Add margin to create space between images */
+  }
+  
+  .tendencia-titulo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: rgba(255, 255, 255, 0);;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  

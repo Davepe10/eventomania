@@ -5,7 +5,23 @@ npm install react-slick slick-carousel
 npm install --save @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
 
 
+npm install react-icons --save
+npm install react-select
+
 
 import { MdOutlinePriceChange, MdDateRange } from 'react-icons/md';
 import { BsGeoAlt } from 'react-icons/bs';
 import { BiSolidCategoryAlt ,BiSearch } from 'react-icons/bi';
+
+
+
+como iniciar el servidor :
+
+# Navegar al directorio del proyecto
+cd "C:\ruta\a\tu\proyecto\eventomania_backend"
+
+# Activar el entorno virtual (si existe)
+.\venv\Scripts\Activate
+
+# Iniciar el servidor Django
+python manage.py runserver
